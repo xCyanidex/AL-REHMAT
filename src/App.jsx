@@ -7,7 +7,12 @@ import Contact from "./Pages/Contact"
 import DealersRegistration from "./Pages/DealersRegistration";
 import Projects from "./Pages/Projects";
 import Meriton from "./Pages/Meriton";
-import { BrowserRouter, Routes, Route,useLocation } from "react-router-dom";
+import {
+  HashRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import { useEffect } from "react";
 // import { ReactComponent as CompanyIcon } from "./assets/CompanySVG";
 import { WhatsAppWidget } from "react-whatsapp-widget";
@@ -25,7 +30,7 @@ function App() {
   }
   return (
     <>
-      <BrowserRouter>
+      <Router>
         <Navbar />
         <ScrollToTop />
         <Routes>
@@ -37,7 +42,7 @@ function App() {
           <Route path="/projects/meriton" element={<Meriton />} />
         </Routes>
         <Footer />
-      </BrowserRouter>
+      </Router>
       <WhatsAppWidget
         style={{ zIndex: "99999999999", position: "relative" }}
         inputPlaceHolder={"Type your message"}
