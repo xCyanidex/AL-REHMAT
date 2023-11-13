@@ -1,14 +1,14 @@
 
 import companylogo from "./assets/logos.png"
-import React, { lazy, Suspense } from "react";
-import Footer from "./Components/Footer/Footer";
-import Navbar from "./Components/Navbar/Navbar";
+import  { lazy, Suspense } from "react";
+const Footer=lazy(()=> import("./Components/Footer/Footer"));
+const Navbar=lazy(()=> import("./Components/Navbar/Navbar"));
 const Home=lazy(()=> import("./Pages/Home"))  ;
-import About from "./Pages/About"
-import Contact from "./Pages/Contact"
-import DealersRegistration from "./Pages/DealersRegistration";
-import Projects from "./Pages/Projects";
-import Meriton from "./Pages/Meriton";
+const About=lazy(()=> import("./Pages/About"));
+const Contact=lazy(()=> import("./Pages/Contact"));
+const DealersRegistration=lazy(()=> import("./Pages/DealersRegistration"));
+const Projects=lazy(()=> import("./Pages/Projects"));
+const Meriton=lazy(()=> import("./Pages/Meriton"));
 
 import {
   HashRouter as Router,
