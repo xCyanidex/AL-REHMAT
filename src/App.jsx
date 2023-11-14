@@ -9,6 +9,7 @@ const Contact=lazy(()=> import("./Pages/Contact"));
 const DealersRegistration=lazy(()=> import("./Pages/DealersRegistration"));
 const Projects=lazy(()=> import("./Pages/Projects"));
 const Meriton=lazy(()=> import("./Pages/Meriton"));
+import { HelmetProvider } from "react-helmet-async";
 
 import {
   HashRouter as Router,
@@ -46,6 +47,7 @@ function App() {
   }
   return (
     <>
+    <HelmetProvider>
       <Suspense fallback={<Loading />}>
         <Router>
           <Navbar />
@@ -69,7 +71,8 @@ function App() {
           "Welcome to Al-Rehmat Developers,\n Please type your query and our agent will respond to you soon.\n Thank you."
         }
         phoneNumber="+923044659952"
-      />
+        />
+        </HelmetProvider>
     </>
   );
 }
