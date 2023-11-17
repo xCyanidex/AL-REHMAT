@@ -1,8 +1,45 @@
 
 import InputField from "../Inputs/InputField";
 import TextArea from "../Inputs/TextArea";
+import axios from "axios";
+import { useRef} from "react";
 import "./CTA.css"
 const CTA = () => {
+  const fnameref = useRef(null);
+  const lnameref = useRef(null);
+   const emailref = useRef(null);
+  const messageref = useRef(null);
+
+
+  function send_email(){
+    console.log("fn ran");
+    const firstName = fnameref.current.value;
+    const lastName = lnameref.current.value;
+    const email = emailref.current.value;
+    const message = messageref.current.value;
+
+    [firstName, lastName, email, message].forEach((field, index) => {
+      if (!field) {
+        console.log(
+          `Please Provide ${["fname", "lname", "email", "message"][index]}`
+        );
+        return;
+      }
+    });
+
+    // Send a POST request to the Express server using Axios
+    axios
+      .post("http://localhost:3001/send-email-contact", {
+        to: "your-email@gmail.com", // Update with your Gmail address
+        subject: "Contact Form Submission",
+        firstName,
+        lastName,
+        email,
+        message,
+      })
+      .then((response) => console.log(response.data))
+      .catch((error) => console.error("Error:", error));
+  }
   return (
     <>
       <div className="container  my-24 mx-auto md:px-6 ">
@@ -14,23 +51,27 @@ const CTA = () => {
                   <form className="text-center">
                     <div className="grid md:grid-cols-2 md:gap-6">
                       <InputField
+                        ref={fnameref}
                         type={"text"}
                         label={"First name"}
                         placeholder={"First name"}
                       />
                       <InputField
+                        ref={lnameref}
                         type={"text"}
                         label={"Last name"}
                         placeholder={"Last name"}
                       />
                     </div>
                     <InputField
+                      ref={emailref}
                       type={"email"}
                       label={"Email address"}
                       placeholder={"Email address"}
                     />
-                    <TextArea/>
+                    <TextArea ref={messageref} />
                     <button
+                      onClick={send_email}
                       type="button"
                       data-te-ripple-init=""
                       data-te-ripple-color="light"

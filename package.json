@@ -15,6 +15,7 @@
     "@material-tailwind/react": "^2.1.4",
     "@splinetool/react-spline": "^2.2.6",
     "@splinetool/runtime": "^0.9.492",
+    "axios": "^1.6.2",
     "embla-carousel-auto-height": "^8.0.0-rc14",
     "embla-carousel-autoplay": "^8.0.0-rc14",
     "embla-carousel-react": "^8.0.0-rc14",
