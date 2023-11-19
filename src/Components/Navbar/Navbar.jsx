@@ -1,6 +1,6 @@
 import React from 'react'
 import logo from "../../assets/logos.png"
-import { Link } from 'react-router-dom';
+import { Link,NavLink } from 'react-router-dom';
 const Navbar = () => {
   return (
     <div className="navbar bg-base-100 scroll-m-3 fixed top-0 z-50">
@@ -27,30 +27,51 @@ const Navbar = () => {
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <Link className="font-bold" to="/">
+              <NavLink
+         
+                activeClassName="active"
+                className="font-bold "
+                to="/"
+              >
                 HOME
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link className="font-bold" to="/about">
+              <NavLink
+                activeClassName="active"
+                className="font-bold"
+                to="/about"
+              >
                 ABOUT US
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link className="font-bold" to="/projects">
+              <NavLink
+                activeClassName="active"
+                className="font-bold"
+                to="/projects"
+              >
                 PROJECTS
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link className="font-bold" to="/registration">
+              <NavLink
+                activeClassName="active"
+                className="font-bold"
+                to="/registration"
+              >
                 DEALERS REGISTRATION
-              </Link>
+              </NavLink>
             </li>
 
             <li>
-              <Link className="font-bold" to="/contact">
+              <NavLink
+                activeClassName="active"
+                className="font-bold"
+                to="/contact"
+              >
                 CONTACT US
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </div>
@@ -66,36 +87,52 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <Link className="font-bold" to="/">
+            <NavLink activeClassName="active" className="font-bold " to="/">
               HOME
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link className="font-bold" to="/about">
+            <NavLink activeClassName="active" className="font-bold" to="/about">
               ABOUT US
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link className="font-bold" to="/projects">
+            <NavLink
+              activeClassName="active"
+              className="font-bold"
+              to="/projects"
+            >
               PROJECTS
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link className="font-bold" to="/registration">
+            <NavLink
+              activeClassName="active"
+              className="font-bold"
+              to="/registration"
+            >
               DEALERS REGISTRATION
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link className="font-bold" to="/contact">
+            <NavLink
+              activeClassName="active"
+              className="font-bold"
+              to="/contact"
+            >
               CONTACT US
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </div>
       <div className="navbar-end">
-        <Link to="/contact" className="btn font-bold">
+        <NavLink
+          activeClassName="active"
+          to="/contact"
+          className="btn font-bold"
+        >
           MEET US
-        </Link>
+        </NavLink>
       </div>
     </div>
   );
